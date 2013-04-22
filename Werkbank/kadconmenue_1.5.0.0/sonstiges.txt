@@ -1,0 +1,34 @@
+PROMPT(&cmd,"$$[[Beenden,Iteminfo,Spielerliste,Seen,Inventar speichern,Inventar laden,XP speichern,XP laden]]");// Auswahlmenue
+
+IF(&cmd="Beenden");
+LOGTO(textarea,Menü beendet);
+STOP();
+
+ELSEIF(&cmd="Iteminfo");
+ECHO(/iteminfo);
+
+ELSEIF(&cmd="Spielerliste");
+ECHO(/list);
+
+ELSEIF(&cmd="Seen");
+PROMPT(&soname1,"$$[Spielername]");
+ECHO(/seen %&soname1%);
+
+ELSEIF(&cmd="Inventar speichern");
+ECHO(/inv save);
+LOGTO(textarea,Inventar speichern);
+
+ELSEIF(&cmd="Inventar laden");
+ECHO(/inv load);
+LOGTO(textarea,Inventar laden);
+
+ELSEIF(&cmd="XP speichern");
+ECHO(/inv savexp);
+LOGTO(textarea,Erfahrungspunkte speichern);
+
+ELSEIF(&cmd="XP laden");
+ECHO(/inv loadxp);
+LOGTO(textarea,Erfahrungspunkte laden);
+
+ENDIF;
+

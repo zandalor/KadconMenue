@@ -1,0 +1,37 @@
+PROMPT(&cmd,"$$[[Beenden,Home,Sethome,Warpliste,Warpinfo,Wichtige Warps,Warpen]]");
+
+IF(&cmd="Beenden");
+LOGTO(textarea,Ortsmenü beendet);
+STOP();
+
+ELSEIF(&cmd="Home");
+ECHO(/home);
+LOGTO(textarea,Willkommen daheim!);
+
+ELSEIF(&cmd="Sethome");
+ECHO(/sethome);
+LOGTO(textarea,Heimat gesetzt);
+
+ELSEIF(&cmd="Warpliste");
+PROMPT(#oseite1,"$$[Seitenzahl]");
+ECHO(/warp list %#oseite1%);
+INC(#oseite1,1);
+ECHO(/warp list %#oseite1%);
+
+ELSEIF(&cmd="Warpinfo");
+PROMPT(&owarp1,"$$[Warpname]");
+ECHO(/w info %&owarp1%);
+
+ELSEIF(&cmd="Wichtige Warps");
+EXEC(warps.txt);
+LOG(warps aufgerufen);
+
+ELSEIF(&cmd="Warpen");
+PROMPT(&owarp2,"$$[Warpname]");
+ECHO(/w %&owarp2%);
+LOGTO(textarea,Willkommen bei %&owarp2%);
+
+
+ENDIF;
+
+

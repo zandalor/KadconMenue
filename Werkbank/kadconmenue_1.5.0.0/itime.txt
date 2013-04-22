@@ -1,0 +1,31 @@
+PROMPT(&cmd,"$$[[Beenden,ITime-Konto,Boots kaufen,Catch kaufen,Nohunger,Paymore,Biome aendern]]");
+
+IF(&cmd="Beenden");
+STOP();
+
+ELSEIF(&cmd="ITime-Konto");
+ECHO(/itime);
+
+ELSEIF(&cmd="Boots kaufen");
+ECHO(/buy boots);
+LOGTO(textarea,Flugzeit gekauft);
+
+ELSEIF(&cmd="Catch kaufen");
+ECHO(/buy catch);
+LOGTO(textarea,Fangzeit gekauft);
+
+ELSEIF(&cmd="Nohunger");
+ECHO(/buy nohunger);
+LOGTO(textarea,Nohunger gekauft);
+
+ELSEIF(&cmd="Paymore");
+ECHO(/buy paymore);
+LOGTO(textarea,Mehr Geld beim Payday gekauft);
+
+ELSEIF(&cmd="Biome aendern");
+EXEC(biome.txt);
+LOG(biome aufgerufen);
+
+ENDIF;
+
+

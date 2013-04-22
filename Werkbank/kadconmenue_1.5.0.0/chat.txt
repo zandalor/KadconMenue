@@ -1,0 +1,68 @@
+prompt(&cmd,"$$[[Beenden,Chats verlassen,Chats betreten,AFK,Chat leeren,Privatnachricht,Privatunterhaltung,Ignorieren,Mail schreiben,Mails abrufen,Mails loeschen]]");
+
+IF(&cmd="Beenden");
+LOGTO(textarea,Chatverwaltung beendet);
+STOP();
+
+ELSEIF(&cmd="Chats verlassen");
+//prompt(&seite1,"$$[Seitenzahl]");
+CLEARCHAT();
+ECHO(/leave g);
+WAIT(2);
+ECHO(/leave h);
+WAIT(2);
+ECHO(/leave t);
+WAIT(2);
+ECHO(/leave l);
+LOGTO(textarea,Alle Chatkanäle wurden verlassen);
+
+ELSEIF(&cmd="Chats betreten");
+ECHO(/join g);
+WAIT(2);
+ECHO(/join h);
+WAIT(2);
+ECHO(/join t);
+WAIT(2);
+ECHO(/join l);
+LOGTO(textarea,Alle Chatkanäle wurden betreten);
+
+ELSEIF(&cmd="AFK");
+ECHO(/ch afk);
+LOGTO(textarea,AFK aktiviert/deaktiviert);
+
+ELSEIF(&cmd="Chat leeren");
+CLEARCHAT();
+
+ELSEIF(&cmd="Privatnachricht");
+PROMPT(&cname1,"$$u");
+PROMPT(&ctext1,"$$[Text]");
+ECHO(/tell %&cname1% %&ctext1%);
+LOGTO(textarea,Privatnachricht an %&cname1% gesendet);
+
+ELSEIF(&cmd="Privatunterhaltung");
+PROMPT(&cname2,"$$u");
+PROMPT(&ctext2,"$$[Text]");
+ECHO(/msg %&cname2% %&ctext2%);
+LOGTO(textarea,Privatunterhaltung mit %&cname1% gestartet);
+
+ELSEIF(&cmd="Ignorieren");
+PROMPT(&cname3,"$$u");
+ECHO(/ignore %&cname3%);
+LOGTO(textarea,%&cname1% wird jetzt ignoriert oder wieder beachtet.);
+
+ELSEIF(&cmd="Mail schreiben");
+PROMPT(&cname4,"$$u");
+PROMPT(&ctext4,"$$[Text]");
+ECHO(/mail send %&cname4% %&ctext4%);
+LOGTO(textarea,Mail an %&cname4% gesendet);
+
+ELSEIF(&cmd="Mails abrufen");
+ECHO(/mail read);
+LOGTO(textarea,Mails abgerufen);
+
+ELSEIF(&cmd="Mails loeschen");
+ECHO(/mail clear);
+LOGTO(textarea,Mails gelöscht);
+
+ENDIF;
+

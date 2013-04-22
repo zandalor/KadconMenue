@@ -1,0 +1,83 @@
+Kadconmenue v1.5.0.0
+--------------------
+
+
+
+Das Kadconmenü ist eine Makrosammlung für Kadcon.de. 
+Es soll die Übersicht und das Benutzen der Befehle erleichtern.
+Voraussetzung ist das Spiel Minecraft mit installierter Macro/Keybind-Mod.
+
+Aktuelle Version: 
+http://forum.kadcon.de/index.php?page=Thread&postID=107705#post107705
+
+Macro/Keybind-Mod: 
+http://www.minecraftforum.net/topic/467504-151-macro-keybind-mod-0982-and-liteloader-for-151/
+
+
+
+Installation:
+
+1. (automatisch) Die Textdateien in den Ordner %appdata%\.minecraft\mods\macros entpacken.
+2. Die Datei "Kommando.txt" auf eine Makrotaste legen. 
+   Sie enthält das Hauptmenü.
+   Verwenden Sie zum Einbinden bitte folgenden Code: $${$$<Kommando.txt>}$$
+3. Wenn Sie Aktivitätsmeldungen möchten, müssen Sie im GUI-Editor ein Textarea 
+   namens textarea einrichten.
+
+
+
+Häufig gestellte Fragen:
+
+* Wo werden die Koordinaten gespeichert?
+Die Koordinaten sind als Maplinks in dieser Datei zu finden:
+%appdata%/.minecraft/mods/macros/logs/koordinaten.txt
+
+* Wie deinstalliert man das Makro?
+Man löscht alle Dateien, die in der ZIP-Datei waren, aus dem Macro-Ordner.
+Wenn Sie ein Setup verwendet haben, können sie das automatisch mit
+der Verknüpfung tun: 
+Start - Programme - winterschwert - KadconMenue - Deinstallieren
+
+
+
+Mitarbeiter:
+
+-winterschwert
+-delscheneins
+
+
+
+Änderungsprotokoll:
+
+1.0.1.0: 
+Seen funktioniert jetzt richtig.
+
+1.1.0.0: 
+Anzeige wichtiger Links ergänzt.
+Aktivitätsmeldungen für Textareas hinzugefügt.
+
+1.2.0.0: 
+Kategorie Hilfe ergänzt.
+Funktion zur Speicherung von Koordinaten und Maplinks ergänzt.
+
+1.3.0.0: 
+XP laden repariert.
+Itime-Hilfe in Kategorie Hilfe verschoben.
+Installer ergänzt.
+
+1.3.1.0:
+Tutorial-Knopf repariert.
+FAQ in LiesMich.txt ergänzt.
+Defekte Verknüpfung im ITime-Menü entfernt.
+
+1.4.0.0:
+Screenshot-Funktion auskommentiert.
+Nach /land buy wird jetzt der aktuelle Kontostand angezeigt.
+Bank zu wichtigen Warps hinzugefügt.
+Land kann man jetzt auch ohne das Setzen von Fackeln kaufen und verkaufen.
+
+1.4.1.0
+Fehler beim Setzen von Multihomes behoben
+
+1.5.0.0
+Funktion zum Leeren des Chats ergänzt

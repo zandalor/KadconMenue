@@ -1,0 +1,61 @@
+prompt(&cmd,"$$[[Beenden,mcstats,Mining,Woodcutting,Herbalism,Excavation,Fishing,Unarmed,Archery,Swords,Axes,Taming,Repair,Acrobatics]]");// Auswahlmenue
+
+IF(&cmd="mcstats");
+echo(/mcstats);
+// Mcstats abrufen.
+
+elseif(&cmd="Mining");
+echo(/mining);
+// Mining abrufen.
+
+elseif(&cmd="Woodcutting");
+echo(/woodcutting);
+// Woodcutting abrufen.
+
+elseif(&cmd="Herbalism");
+echo(/herbalism);
+// Herbalism abrufen.
+
+elseif(&cmd="Excavation");
+echo(/excavation);
+// Excavation abrufen.
+
+elseif(&cmd="Fishing");
+echo(/fishing);
+// Fishing abrufen.
+
+elseif(&cmd="Unarmed");
+echo(/unarmed)
+// Unarmed abrufen.
+
+elseif(&cmd="Archery");
+echo(/archery)
+// Archery abrufen.
+
+elseif(&cmd="Swords");
+echo(/swords);
+// Swords abrufen.
+
+elseif(&cmd="Axes");
+echo(/axes);
+// Axes abrufen.
+
+elseif(&cmd="Taming");
+echo(/taming);
+// Taming abrufen.
+
+elseif(&cmd="Repair");
+echo(/repair);
+// Repair abrufen.
+
+elseif(&cmd="Acrobatics");
+echo(/acrobatics);
+// Acrobatics abrufen.
+
+elseif(&cmd="Beenden");
+STOP();
+// Menue schliessen und zum Spiel zurueckkehren.
+
+endif;
+
+

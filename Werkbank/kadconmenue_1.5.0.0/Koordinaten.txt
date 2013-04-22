@@ -1,0 +1,8 @@
+prompt(&kort1,"$$[Ortsname]");
+PROMPT(&kzoom1,"$$[Zoomfaktor]");
+PROMPT(&kmap1,"$$[Mapname]");
+LOGTO("koordinaten.txt","Datum: %DATE%, %TIME% Uhr");
+LOGTO("koordinaten.txt","%&kort1%: http://%&kmap1%.kadcon.de/?worldname=world&mapname=surface&zoom=%&kzoom1%&x=%XPOS%&y=%YPOS%&z=%ZPOS%");
+LOGTO("koordinaten.txt","Foren-Link: [url='http://%&kmap1%.kadcon.de/?worldname=world&mapname=surface&zoom=%&kzoom1%&x=%XPOS%&y=%YPOS%&z=%ZPOS%']%&kort1%[/url]");
+LOGTO("koordinaten.txt","----------");
+log(&cPosition %&kort1% in "koordinaten.txt" gespeichert!);

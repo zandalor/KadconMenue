@@ -1,0 +1,37 @@
+PROMPT(&cmd,"$$[[Beenden,Voten,Fliegen,Itime,Buy,Grundstuecke,Geld,Tutorial,Warp Hilfe,Links]]");
+
+IF(&cmd="Beenden");
+LOGTO(textarea,Hilfe beendet);
+STOP();
+
+ELSEIF(&cmd="Voten");
+ECHO(/voten);
+
+ELSEIF(&cmd="Fliegen");
+ECHO(/fliegen);
+
+ELSEIF(&cmd="Itime");
+ECHO(/itime ?);
+
+ELSEIF(&cmd="Buy");
+ECHO(/bhelp);
+
+ELSEIF(&cmd="Grundstuecke");
+ECHO(/land help);
+
+ELSEIF(&cmd="Geld");
+ECHO(/money ?);
+
+ELSEIF(&cmd="Tutorial");
+ECHO(/tutorial);
+LOGTO(textarea,Tutorial gestartet);
+
+ELSEIF(&cmd="Warp Hilfe");
+ECHO(/w hilfe);
+LOGTO(textarea,Willkommen in der Hilfe);
+
+ELSEIF(&cmd="Links");
+EXEC(links.txt);
+LOG(links aufgerufen);
+
+ENDIF;

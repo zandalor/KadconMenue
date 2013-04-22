@@ -1,0 +1,87 @@
+prompt(&cmd,"$$[[Beenden,iceplains,taiga,desert,extremehills,icemountains,deserthills,forest,ocean,beach,taigahills,smallmountains,junglehills,foresthills,swampland,jungle,frozenriver,frozenocean,original,plains,river]]");
+
+IF(&cmd="Beenden");
+LOGTO(textarea,Biomeverwaltung beendet);
+STOP();
+
+ELSEIF(&cmd="iceplains");
+ECHO(/buy biome iceplains);
+LOGTO(textarea,Biome zu Iceplains geändert);
+
+ELSEIF(&cmd="taiga");
+ECHO(/buy biome taiga);
+LOGTO(textarea,Biome zu Taiga geändert);
+
+ELSEIF(&cmd="desert");
+ECHO(/buy biome desert);
+LOGTO(textarea,Biome zu Desert geändert);
+
+ELSEIF(&cmd="extremehills");
+ECHO(/buy biome extremehills);
+LOGTO(textarea,Biome zu Extremehills geändert);
+
+ELSEIF(&cmd="icemountains");
+ECHO(/buy biome icemountains);
+LOGTO(textarea,Biome zu Icemountains geändert);
+
+ELSEIF(&cmd="deserthills");
+ECHO(/buy biome deserthills);
+LOGTO(textarea,Biome zu Deserthills geändert);
+
+ELSEIF(&cmd="forest");
+ECHO(/buy biome forest);
+LOGTO(textarea,Biome zu Forest geändert);
+
+ELSEIF(&cmd="ocean");
+ECHO(/buy biome ocean);
+LOGTO(textarea,Biome zu Ocean geändert);
+
+ELSEIF(&cmd="beach");
+ECHO(/buy biome beach);
+LOGTO(textarea,Biome zu Beach geändert);
+
+ELSEIF(&cmd="taigahills");
+ECHO(/buy biome taigahills);
+LOGTO(textarea,Biome zu Taigahills geändert);
+
+ELSEIF(&cmd="smallmountains");
+ECHO(/buy biome smallmountains);
+LOGTO(textarea,Biome zu Smallmountains geändert);
+
+ELSEIF(&cmd="junglehills");
+ECHO(/buy biome junglehills);
+LOGTO(textarea,Biome zu Junglehills geändert);
+
+ELSEIF(&cmd="foresthills");
+ECHO(/buy biome foresthills);
+LOGTO(textarea,Biome zu Foresthills geändert);
+
+ELSEIF(&cmd="swampland");
+ECHO(/buy biome swampland);
+LOGTO(textarea,Biome zu Swampland geändert);
+
+ELSEIF(&cmd="jungle");
+ECHO(/buy biome jungle);
+LOGTO(textarea,Biome zu Jungle geändert);
+
+ELSEIF(&cmd="frozenriver");
+ECHO(/buy biome frozenriver);
+LOGTO(textarea,Biome zu Frozenriver geändert);
+
+ELSEIF(&cmd="frozenocean");
+ECHO(/buy biome frozenocean);
+LOGTO(textarea,Biome zu Frozenocean geändert);
+
+ELSEIF(&cmd="original");
+ECHO(/buy biome original);
+LOGTO(textarea,Biome zu Original geändert);
+
+ELSEIF(&cmd="plains");
+ECHO(/buy biome plains);
+LOGTO(textarea,Biome zu Plains geändert);
+
+ELSEIF(&cmd="river");
+ECHO(/buy biome river);
+LOGTO(textarea,Biome zu River geändert);
+
+ENDIF;

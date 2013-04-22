@@ -1,0 +1,99 @@
+PROMPT(&cmd,"$$[[Beenden,Kontostand,Zahlen,Ueberweisen,Eroeffnen,Schliessen,Einzahlen,Auszahlen,Hinzufuegen,Entfernen,BankTeleport,Shopschild,Shopsilent,Shopinfo]]");
+// Auswahlmenue
+
+IF(&cmd="Kontostand");
+CLEARCHAT();
+echo(/kbank);
+echo(/money rank);
+WAIT(500ms);
+//PRESS(F2); // erstellt Screenshot
+LOGTO(textarea,Kontostand abgerufen);
+// Kontostand abrufen 
+
+elseif(&cmd="Zahlen");
+prompt(&spieler1,"$$u");
+prompt(&geld1,"$$[Geldbetrag]");
+echo(/money pay %&spieler1% %&geld1%);
+LOGTO(textarea,%&geld1% Kadis wurden an %&spieler1% gesendet);
+// Ueberweisung von Spieler zu Spieler
+
+elseif(&cmd="Ueberweisen");
+STOP(ESC);
+prompt(&konto1,"$$[VonKonto]");
+prompt(&konto2,"$$[ZuKonto]");
+prompt(&geld2,"$$[Geldbetrag]");
+Placesign(Überweisen,%&konto1%,%&konto2%,%&geld2%);
+LOGTO(textarea,%&geld2% Kadis von %&konto1% zu %&konto2% überwiesen);
+// Ueberweisung von einem eigenen Konto zu anderem eigenen Konto
+
+elseif(&cmd="Eroeffnen");
+prompt(&konto3,"$$[Kontoname]");
+Placesign(eröffnen,%&konto3%);
+LOGTO(textarea,Konto %&konto3% eröffnet);
+// Konto eroeffnen
+
+elseif(&cmd="Schliessen");
+prompt(&konto4,"$$[Kontoname]");
+Placesign(schliessen,%&konto4%);
+LOGTO(textarea,Konto %&konto4% geschlossen);
+// Konto schliessen
+
+elseif(&cmd="Einzahlen");
+prompt(&konto5,"$$[Kontoname]");
+prompt(&geld3,"$$[Geldbetrag]");
+Placesign(einzahlen,%&konto5%,%&geld3%);
+LOGTO(textarea,%&geld3% Kadis auf %&konto5% gezahlt);
+// Geld von Spielerkonto in ein eigenes Bankkonto zahlen
+
+elseif(&cmd="Auszahlen");
+prompt(&konto6,"$$[Kontoname]");
+prompt(&geld4,"$$[Geldbetrag]");
+Placesign(auszahlen,%&konto6%,%&geld4%);
+LOGTO(textarea,%&geld4% Kadis von %&konto6% abgehoben);
+// Geld von einem Bankkonto abheben
+
+elseif(&cmd="Hinzufuegen");
+prompt(&konto7,"$$[Kontoname]");
+prompt(&spieler2,"$$u");
+Placesign(hinzufügen,%&konto7%,%&spieler2%);
+LOGTO(textarea,%&spieler2% zu Konto %&konto7% hinzugefügt);
+// Anderem Spieler Zugriffsrechte fuer ein eigenes Konto geben
+
+elseif(&cmd="Entfernen");
+prompt(&konto8,"$$[Kontoname]");
+prompt(&spieler3,"$$u");
+Placesign(entfernen,%&konto8%,%&spieler3%);
+LOGTO(textarea,%&spieler3% von Konto %&konto8% entfernt);
+// Anderem Spieler die Zugriffsrechte fuer ein Konto entziehen
+
+elseif(&cmd="BankTeleport");
+echo(/w bank);
+LOGTO(textarea,Sie befinden sich vor der Bank);
+//Teleport zum Warp "Bank"
+
+elseif(&cmd="Beenden");
+LOGTO(textarea,Geldveraltung beendet);
+STOP();
+// Menue schliessen und zum Spiel zurueckkehren.
+
+elseif(&cmd="Shopschild");
+prompt(&konto9,"$$[Kontoname]");
+prompt(&anzahl1,"$$[Anzahl]");
+prompt(&vkpreis1,"$$[Verkaufspreis]");
+prompt(&akpreis1,"$$[Ankaufspreis]");
+prompt(&item1,"$$i");
+Placesign(%&konto9%,%&anzahl1%,B %&vkpreis1% : S %&akpreis1%,%&item1%);
+LOGTO(textarea,Shopschild erstellt);
+// Erstellt ein Shopschild
+
+elseif(&cmd="Shopsilent");
+echo(/shopsilent);
+LOGTO(textarea,Shopmeldungen aktiviert/deaktiviert.);
+
+elseif(&cmd="Shopinfo");
+echo(/shopinfode);
+LOGTO(textarea,Shopinformationen werden angezeigt);
+
+endif;
+
+

@@ -1,0 +1,41 @@
+PROMPT(&cmd,"$$[[Beenden,Sethome,Home,Homelist,Homedelete,Back,TPA,TPAhere]]");
+
+IF(&cmd="Beenden");
+LOGTO(textarea,VIP-Menü beendet);
+STOP();
+
+ELSEIF(&cmd="Sethome");
+PROMPT(&vhome1,"$$[Homepunktname]");
+ECHO(/sethome %&vhome1%);
+LOGTO(textarea,Heimat "%&vhome1%" gesetzt);
+
+ELSEIF(&cmd="Home");
+PROMPT(&vhome2,"$$[Homepunkt]");
+ECHO(/home %&vhome2%);
+LOGTO(textarea,Willkommen bei %&vhome2%);
+
+ELSEIF(&cmd="Back");
+ECHO(/back);
+LOGTO(textarea,Willkommen zurück);
+
+ELSEIF(&cmd="TPA");
+PROMPT(&vname1,"$$u");
+ECHO(/tpa %&vname1%);
+LOGTO(textarea,Zu Spieler %&vname1% teleportieren);
+
+ELSEIF(&cmd="TPAhere");
+PROMPT(&vname2,"$$u");
+ECHO(/tpahere %&vname2%);
+LOGTO(textarea,Spieler %&vname2% herteleportieren);
+
+ELSEIF(&cmd="Homelist");
+ECHO(/homelist);
+
+ELSEIF(&cmd="Homedelete");
+PROMPT(&vhome3,"$$[Loeschen]");
+ECHO(/homedelete %&vhome3%);
+LOGTO(textarea,%&vhome3% löschen);
+
+ENDIF;
+
+

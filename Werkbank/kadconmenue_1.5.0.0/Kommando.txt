@@ -1,0 +1,45 @@
+prompt(&com,"$$[[Beenden,Geld,Land,Chat,Orte,ITime,MCMMO,VIP,Sonstiges,Hilfe]]");
+// Auswahlmenue
+
+IF(&com="Beenden");
+LOG(beendet);
+LOGTO(textarea,Menü beendet);
+STOP();
+
+ELSEIF(&com="Geld");
+EXEC(geld.txt);
+LOG(geld aufgerufen);
+
+ELSEIF(&com="Land");
+EXEC(land.txt);
+LOG(land aufgerufen);
+
+ELSEIF(&com="Chat");
+EXEC(chat.txt);
+LOG(chat aufgerufen);
+
+ELSEIF(&com="Orte");
+EXEC(orte.txt);
+LOG(orte aufgerufen);
+
+ELSEIF(&com="ITime");
+EXEC(itime.txt);
+LOG(itime aufgerufen);
+
+ELSEIF(&com="MCMMO");
+EXEC(mcmmo.txt);
+LOG(mcmmo aufgerufen);
+
+ELSEIF(&com="VIP");
+EXEC(VIP.txt);
+LOG(vip aufgerufen);
+
+ELSEIF(&com="Sonstiges");
+EXEC(sonstiges.txt);
+LOG(sonstiges aufgerufen);
+
+ELSEIF(&com="Hilfe");
+EXEC(hilfe.txt);
+LOG(hilfe aufgerufen);
+
+ENDIF;

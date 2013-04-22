@@ -1,0 +1,31 @@
+PROMPT(&cmd,"$$[[Beenden,Spawn,Einkaufszentrum,Bank,Hilfe,Spawnie,Tutorial]]");
+
+IF(&cmd="Beenden");
+LOGTO(textarea,Warpmenü beendet);
+STOP();
+
+ELSEIF(&cmd="Spawn");
+ECHO(/w spawn);
+LOGTO(textarea,Willkommen am Spawn);
+
+ELSEIF(&cmd="Einkaufszentrum");
+ECHO(/w ekz);
+LOGTO(textarea,Willkommen im Einkaufszentrum);
+
+ELSEIF(&cmd="Bank");
+echo(/w bank);
+LOGTO(textarea,Sie befinden sich vor der Bank);
+
+ELSEIF(&cmd="Hilfe");
+ECHO(/w hilfe);
+LOGTO(textarea,Willkommen in der Hilfe);
+
+ELSEIF(&cmd="Spawnie");
+ECHO(/spawnie);
+LOGTO(textarea,Willkommen bei deinem Spawnie-Grundstück);
+
+ELSEIF(&cmd="Tutorial");
+ECHO(/w tutorial);
+LOGTO(textarea,Tutorial gestartet);
+
+ENDIF;

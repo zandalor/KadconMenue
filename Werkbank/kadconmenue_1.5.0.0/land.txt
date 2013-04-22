@@ -1,0 +1,90 @@
+prompt(&cmd,"$$[[Beenden,Info,Buy,Buy ohne Fackeln,Sell,Sell ohne Fackeln,List,Add,Remove,Lock,Unlock,TNT-Allow,TNT-Deny,Upgrade,Restorechunk,Potion-allow,Potion-deny,Aufkaufen,Biome aendern,Koordinaten speichern]]");
+// Auswahlmenue
+
+IF(&cmd="Beenden");
+LOGTO(textarea,Landverwaltung beendet);
+STOP();
+
+ELSEIF(&cmd="Info");
+ECHO(/land info);
+
+ELSEIF(&cmd="Buy");
+ECHO(/land buy);
+ECHO(/money);
+LOGTO(textarea,Grundstückskauf eingeleitet);
+
+ELSEIF(&cmd="Buy ohne Fackeln");
+ECHO(/land buy empty);
+ECHO(/money);
+LOGTO(textarea,Grundstückskauf eingeleitet);
+
+ELSEIF(&cmd="Sell");
+ECHO(/land sell);
+LOGTO(textarea,Grundstücksverkauf eingeleitet);
+
+ELSEIF(&cmd="Sell ohne Fackeln");
+ECHO(/land sell empty);
+ECHO(/money);
+LOGTO(textarea,Grundstücksverkauf eingeleitet);
+
+ELSEIF(&cmd="List");
+prompt(#seite1,"$$[Seitenzahl]");
+ECHO(/land list %#seite1%);
+INC(#seite1,1);
+ECHO(/land list %#seite1%);
+LOGTO(textarea,Ihre Grundstücke wurden aufgelistet);
+
+ELSEIF(&cmd="Add");
+prompt(&name1,"$$u");
+ECHO(/land add %&name1%);
+LOGTO(textarea,%&name1% wurde auf dem Grundstück hinzugefügt);
+
+ELSEIF(&cmd="Remove");
+prompt(&name2,"$$u");
+ECHO(/land remove %&name2%);
+LOGTO(textarea,%&name2% wurde vom Grundstück entfernt);
+
+ELSEIF(&cmd="Lock");
+ECHO(/land lock);
+LOGTO(textarea,Grundstück verschlossen);
+
+ELSEIF(&cmd="Unlock");
+ECHO(/land unlock);
+LOGTO(textarea,Grundstück entriegelt);
+
+ELSEIF(&cmd="TNT-Allow");
+ECHO(/land tnt-allow);
+LOGTO(textarea,TNT erlaubt);
+
+ELSEIF(&cmd="TNT-Deny");
+ECHO(/land tnt-deny);
+LOGTO(textarea,TNT verboten);
+
+ELSEIF(&cmd="Upgrade");
+ECHO(/land upgrade);
+LOGTO(textarea,Bauhöhe erweitert);
+
+ELSEIF(&cmd="Restorechunk");
+ECHO(/restorechunk);
+LOGTO(textarea,Chunk zurückgesetzt);
+
+ELSEIF(&cmd="Potion-allow");
+ECHO(/land potion-allow);
+LOGTO(textarea,Wurftränke erlaubt);
+
+ELSEIF(&cmd="Potion-deny");
+ECHO(/land potion-deny);
+LOGTO(textarea,Wurftränke verboten);
+
+ELSEIF(&cmd="Aufkaufen");
+ECHO(/land aufkaufen);
+LOGTO(textarea,Aufkaufen eingeleitet);
+
+ELSEIF(&cmd="Biome aendern");
+EXEC(biome.txt);
+
+ELSEIF(&cmd="Koordinaten speichern");
+EXEC(Koordinaten.txt);
+
+ENDIF;
+

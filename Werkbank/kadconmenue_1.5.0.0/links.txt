@@ -1,0 +1,8 @@
+CLEARCHAT();
+LOG(§9----- Wichtige Links -----);
+LOG(§9Voten: §dhttp://vote.kadcon.de);
+LOG(§9Fragen und Antworten: §dhttp://faq.kadcon.de);
+LOG(§9Regeln: §dhttp://forum.kadcon.de/index.php?page=Thread&threadID=24);
+LOG(§9VIP: §dhttp://forum.kadcon.de/index.php?page=Thread&threadID=10);
+LOG(§9Forum: §dhttp://forum.kadcon.de/index.php?page=Index);
+LOG(§9----------------------);
